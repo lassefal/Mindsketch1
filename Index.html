@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MindSketch - Idea & Critical Thinking Canvas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+        🧠 MindSketch
+    </div>
+
+    <div class="toolbar">
+
+        <button id="addIdeaBtn">
+            + Idea
+        </button>
+
+        <button id="connectBtn">
+            🔗 Connect
+        </button>
+
+        <button id="drawBtn">
+            ✏️ Draw
+        </button>
+
+        <button id="questionBtn">
+            💡 Question
+        </button>
+
+        <button id="saveBtn">
+            💾 Save
+        </button>
+
+        <button id="exportBtn">
+            📤 Export
+        </button>
+
+        <button id="clearBtn" class="danger">
+            🗑 Clear
+        </button>
+
+    </div>
+
+</header>
+
+
+<div class="app">
+
+    <!-- LEFT SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2>Think</h2>
+
+        <p class="intro">
+            Sketch an idea, connect it to another idea,
+            then challenge your thinking.
+        </p>
+
+        <div class="thinking-card">
+
+            <h3>Critical Thinking</h3>
+
+            <label>
+                What is the main idea?
+            </label>
+
+            <textarea
+                id="mainIdea"
+                placeholder="Describe the problem or idea..."
+            ></textarea>
+
+            <label>
+                What assumptions am I making?
+            </label>
+
+            <textarea
+                id="assumptions"
+                placeholder="What am I assuming to be true?"
+            ></textarea>
+
+            <label>
+                What evidence supports this?
+            </label>
+
+            <textarea
+                id="evidence"
+                placeholder="Facts, observations, experience..."
+            ></textarea>
+
+            <label>
+                What could prove me wrong?
+            </label>
+
+            <textarea
+                id="counterargument"
+                placeholder="Think of the strongest opposing argument..."
+            ></textarea>
+
+            <label>
+                What is another perspective?
+            </label>
+
+            <textarea
+                id="perspective"
+                placeholder="How might someone else see this?"
+            ></textarea>
+
+        </div>
+
+        <div class="legend">
+
+            <h3>Canvas Tools</h3>
+
+            <p>🟦 Idea</p>
+            <p>🔗 Connection</p>
+            <p>✏️ Freehand sketch</p>
+            <p>💡 Thinking question</p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CANVAS -->
+
+    <main class="workspace">
+
+        <div class="canvas-header">
+
+            <div>
+                <h1>My Thinking Canvas</h1>
+                <span id="status">
+                    Ready
+                </span>
+            </div>
+
+            <button id="clearDrawBtn">
+                Clear Sketch
+            </button>
+
+        </div>
+
+
+        <div id="canvas">
+
+            <svg id="connections"></svg>
+
+            <canvas id="drawingCanvas"></canvas>
+
+            <div id="nodes"></div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- IDEA MODAL -->
+
+<div id="ideaModal" class="modal">
+
+    <div class="modal-content">
+
+        <button class="close" id="closeIdea">
+            ×
+        </button>
+
+        <h2>Create Idea</h2>
+
+        <input
+            id="ideaTitle"
+            type="text"
+            placeholder="Idea title"
+        >
+
+        <textarea
+            id="ideaDescription"
+            placeholder="Describe your idea..."
+        ></textarea>
+
+        <button id="createIdea">
+            Add Idea
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- QUESTION MODAL -->
+
+<div id="questionModal" class="modal">
+
+    <div class="modal-content">
+
+        <button class="close" id="closeQuestion">
+            ×
+        </button>
+
+        <h2>Add Thinking Question</h2>
+
+        <select id="questionType">
+
+            <option value="Why?">
+                Why?
+            </option>
+
+            <option value="What if?">
+                What if?
+            </option>
+
+            <option value="Evidence">
+                What evidence?
+            </option>
+
+            <option value="Assumption">
+                What assumption?
+            </option>
+
+            <option value="Counterargument">
+                What is the counterargument?
+            </option>
+
+            <option value="Perspective">
+                What is another perspective?
+            </option>
+
+        </select>
+
+        <textarea
+            id="questionText"
+            placeholder="Write your question..."
+        ></textarea>
+
+        <button id="createQuestion">
+            Add Question
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
